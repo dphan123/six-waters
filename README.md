@@ -2,6 +2,8 @@
 
 An interactive online exhibition of six works from the Harvard Art Museums on the theme of water.
 
+**Live site:** https://six-waters.vercel.app
+
 Six bodies of water are hidden in one illustrated landscape: a well, an aqueduct, rain, a pond, a river and the sea. Hover over one to find it, and click it to flood the screen and bring its work of art to the surface.
 
 | | Water | Work |
@@ -30,9 +32,9 @@ python3 -m http.server 8000
 
 Then open http://localhost:8000.
 
-## Publish with GitHub Pages
+## Deployment
 
-Push this folder to a repository. Then go to **Settings → Pages**, set the source to the `main` branch and the `/ (root)` folder, and save.
+The site is hosted on Vercel, which is connected to this repository: every push to `main` redeploys https://six-waters.vercel.app automatically. A GitHub Pages copy is also published at https://dphan123.github.io/six-waters/.
 
 ## Images and rights
 
