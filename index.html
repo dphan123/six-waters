@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Six Waters</title>
+  <meta name="description" content="An interactive exhibition of six works from the Harvard Art Museums on the theme of water.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Libre+Franklin:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead__title">
+      <p class="eyebrow">Selections from the Harvard Art Museums</p>
+      <h1>Six Waters</h1>
+    </div>
+    <div class="tally" aria-live="polite">
+      <div class="tally__drops" id="tally-drops" aria-hidden="true"></div>
+      <p class="tally__label"><span id="tally-count">0</span> of 6 waters found</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="intro">
+        <p>Water runs through every corner of the Harvard Art Museums’ collections: drawn from wells, channeled across deserts, held in ripe fruit, and watched under moonlight. Six bodies of water are hidden in this landscape, and each one holds a work of art.</p>
+        <p class="hint"><span class="hint__dot" aria-hidden="true"></span> Hover to find them. Click to bring a work to the surface.</p>
+      </div>
+    <section class="stage" aria-label="Landscape with six bodies of water">
+      <svg class="scene" id="scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet" role="group" aria-label="An illustrated landscape. Choose a body of water to reveal a work of art.">
+        <defs>
+          <linearGradient id="g-sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#1c2a3f"/>
+            <stop offset=".45" stop-color="#4d6380"/>
+            <stop offset=".8" stop-color="#c9b9a0"/>
+            <stop offset="1" stop-color="#e8d9bd"/>
+          </linearGradient>
+          <linearGradient id="g-sea" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#3f5f80"/>
+            <stop offset="1" stop-color="#1f3a56"/>
+          </linearGradient>
+          <linearGradient id="g-water" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#6f97b2"/>
+            <stop offset="1" stop-color="#3f6a8a"/>
+          </linearGradient>
+          <linearGradient id="g-ground" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#c7b585"/>
+            <stop offset="1" stop-color="#a99566"/>
+          </linearGradient>
+          <radialGradient id="g-moon">
+            <stop offset="0" stop-color="#fbf4e2" stop-opacity=".9"/>
+            <stop offset=".35" stop-color="#fbf4e2" stop-opacity=".25"/>
+            <stop offset="1" stop-color="#fbf4e2" stop-opacity="0"/>
+          </radialGradient>
+          <clipPath id="clip-pond"><ellipse cx="270" cy="770" rx="200" ry="66"/></clipPath>
+          <clipPath id="clip-sea"><path d="M960,352 L1600,352 L1600,600 C1460,585 1290,560 1160,512 C1060,476 1000,420 960,352 Z"/></clipPath>
+        </defs>
+
+        <!-- sky -->
+        <rect width="1600" height="900" fill="url(#g-sky)"/>
+        <g class="stars" fill="#f4ecd8">
+          <circle cx="140" cy="70" r="1.6"/><circle cx="310" cy="40" r="1.2"/><circle cx="700" cy="60" r="1.5"/>
+          <circle cx="880" cy="110" r="1.1"/><circle cx="1010" cy="45" r="1.7"/><circle cx="1180" cy="90" r="1.2"/>
+          <circle cx="1480" cy="60" r="1.4"/><circle cx="1560" cy="140" r="1.1"/><circle cx="420" cy="110" r="1"/>
+          <circle cx="1100" cy="180" r="1"/>
+        </g>
+
+        <!-- VI. Sea, with the moon -->
+        <g class="water" data-id="sea" tabindex="0" role="button" aria-label="VI. The Sea">
+          <circle cx="1330" cy="160" r="150" fill="url(#g-moon)" class="moon-glow"/>
+          <circle cx="1330" cy="160" r="40" fill="#f6eedb"/>
+          <path d="M960,352 L1600,352 L1600,600 C1460,585 1290,560 1160,512 C1060,476 1000,420 960,352 Z" fill="url(#g-sea)"/>
+          <g clip-path="url(#clip-sea)" class="waves" stroke="#9fbcd2" stroke-width="2" fill="none" stroke-linecap="round" opacity=".7">
+            <path class="wave wave--a" d="M900,380 q20,-8 40,0 t40,0 t40,0 t40,0 t40,0 t40,0 t40,0 t40,0 t40,0 t40,0 t40,0 t40,0 t40,0 t40,0 t40,0 t40,0 t40,0 t40,0"/>
+            <path class="wave wave--b" d="M900,420 q24,-9 48,0 t48,0 t48,0 t48,0 t48,0 t48,0 t48,0 t48,0 t48,0 t48,0 t48,0 t48,0 t48,0 t48,0 t48,0 t48,0"/>
+            <path class="wave wave--a" d="M900,470 q28,-10 56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0 t56,0"/>
+            <path class="wave wave--b" d="M900,530 q32,-11 64,0 t64,0 t64,0 t64,0 t64,0 t64,0 t64,0 t64,0 t64,0 t64,0 t64,0 t64,0"/>
+          </g>
+          <g class="moonpath" fill="#f6eedb">
+            <rect x="1318" y="362" width="24" height="3" rx="1.5"/><rect x="1308" y="384" width="44" height="3" rx="1.5"/>
+            <rect x="1322" y="408" width="18" height="3" rx="1.5"/><rect x="1300" y="434" width="58" height="3" rx="1.5"/>
+            <rect x="1314" y="464" width="30" height="3" rx="1.5"/><rect x="1294" y="498" width="66" height="3" rx="1.5"/>
+          </g>
+          <!-- rock with a lone figure, after Wan Qingli -->
+          <g transform="translate(-70 0)">
+            <path d="M1440,592 C1452,560 1476,548 1500,552 C1530,556 1552,574 1566,598 Z" fill="#26364a"/>
+            <path d="M1503,552 l-3,-22 q3,-7 6,0 l3,22 Z" fill="#26364a"/>
+            <circle cx="1504" cy="526" r="4" fill="#26364a"/>
+          </g>
+          <ellipse class="hit" cx="1290" cy="440" rx="320" ry="150"/>
+          <g class="tag" transform="translate(1180 300)">
+            <rect x="-6" y="-26" width="140" height="38" rx="19"/>
+            <text x="64" y="-1">VI · The Sea</text>
+          </g>
+          <g class="beacon" transform="translate(1180 450)"><circle r="7"/><circle class="pulse" r="7"/></g>
+        </g>
+
+        <!-- far hills -->
+        <path d="M0,330 C120,290 220,300 330,318 C430,334 520,290 640,300 C760,310 880,330 960,352 C1000,364 1080,420 1180,470 L0,470 Z" fill="#7f8f8c"/>
+
+        <!-- II. Aqueduct across the hills -->
+        <g class="water" data-id="aqueduct" tabindex="0" role="button" aria-label="II. The Aqueduct">
+          <path d="M0,356 C120,330 250,336 360,352 C480,370 560,360 680,346 C780,336 880,380 960,420 L960,470 L0,470 Z" fill="#9a9f84"/>
+          <path class="pipe" d="M-10,372 C120,352 240,356 360,372 C470,386 560,380 690,366" fill="none" stroke="#3c3a35" stroke-width="9" stroke-linecap="round"/>
+          <path class="pipe-flow" d="M-10,372 C120,352 240,356 360,372 C470,386 560,380 690,366" fill="none" stroke="#8fb4cc" stroke-width="2.5" stroke-linecap="round"/>
+          <g stroke="#3c3a35" stroke-width="3">
+            <line x1="80" y1="364" x2="80" y2="380"/><line x1="200" y1="358" x2="200" y2="374"/>
+            <line x1="320" y1="366" x2="320" y2="382"/><line x1="440" y1="382" x2="440" y2="398"/>
+            <line x1="560" y1="378" x2="560" y2="394"/>
+          </g>
+          <!-- dry lakebed -->
+          <ellipse cx="190" cy="420" rx="120" ry="14" fill="#e5dbc6" opacity=".8"/>
+          <path d="M100,420 l30,-4 M170,424 l40,-6 M230,418 l30,3" stroke="#c9bb9d" stroke-width="1.5"/>
+          <rect class="hit" x="0" y="320" width="700" height="120"/>
+          <g class="tag" transform="translate(240 300)">
+            <rect x="-6" y="-26" width="180" height="38" rx="19"/>
+            <text x="84" y="-1">II · The Aqueduct</text>
+          </g>
+          <g class="beacon" transform="translate(360 372)"><circle r="7"/><circle class="pulse" r="7"/></g>
+        </g>
+
+        <!-- mid ground -->
+        <path d="M0,450 C200,420 380,440 560,456 C720,470 860,440 1000,452 C1100,460 1160,500 1220,540 L1220,900 L0,900 Z" fill="#b4a979"/>
+        <path d="M0,540 C220,510 420,520 640,540 C860,560 1040,540 1240,560 C1400,576 1500,600 1600,600 L1600,900 L0,900 Z" fill="url(#g-ground)"/>
+
+        <!-- V. River -->
+        <g class="water" data-id="river" tabindex="0" role="button" aria-label="V. The River">
+          <path d="M928,440 C920,470 900,490 880,520 C850,566 870,610 900,650 C940,705 930,760 870,820 C840,850 820,880 810,900 L1010,900 C1020,860 1060,820 1080,770 C1110,700 1050,640 1000,590 C960,550 950,500 952,440 Z" fill="url(#g-water)"/>
+          <g class="current" fill="none" stroke="#c4dbe6" stroke-width="2" stroke-linecap="round" opacity=".75">
+            <path d="M934,470 C915,520 880,560 905,620 C935,690 960,740 910,810 C890,840 880,870 875,900"/>
+            <path d="M944,480 C935,540 930,580 965,630 C1010,690 1020,760 960,830 C945,850 935,880 930,900"/>
+          </g>
+          <!-- bank tree with clothes basket, after the Kangra folio -->
+          <g>
+            <rect x="1084" y="560" width="10" height="70" fill="#5a4630"/>
+            <circle cx="1089" cy="540" r="44" fill="#56704f"/>
+            <circle cx="1060" cy="556" r="30" fill="#4b6546"/>
+            <circle cx="1118" cy="556" r="28" fill="#4b6546"/>
+            <ellipse cx="1112" cy="636" rx="14" ry="7" fill="#c89a3a"/>
+          </g>
+          <path class="hit" d="M900,430 L980,430 L1140,620 L1060,900 L780,900 L840,620 Z"/>
+          <g class="tag" transform="translate(1110 470)">
+            <rect x="-6" y="-26" width="156" height="38" rx="19"/>
+            <text x="72" y="-1">V · The River</text>
+          </g>
+          <g class="beacon" transform="translate(960 720)"><circle r="7"/><circle class="pulse" r="7"/></g>
+        </g>
+
+        <!-- III. Rain over the melon patch -->
+        <g class="water" data-id="rain" tabindex="0" role="button" aria-label="III. The Rain">
+          <g class="cloud" fill="#ddd5c6">
+            <ellipse cx="560" cy="180" rx="96" ry="38"/>
+            <ellipse cx="500" cy="168" rx="52" ry="40"/>
+            <ellipse cx="590" cy="150" rx="56" ry="46"/>
+            <ellipse cx="640" cy="182" rx="50" ry="30"/>
+          </g>
+          <g class="rain" stroke="#a9c3d3" stroke-width="2" stroke-linecap="round">
+            <line x1="490" y1="220" x2="484" y2="240"/><line x1="520" y1="228" x2="514" y2="248"/>
+            <line x1="550" y1="222" x2="544" y2="242"/><line x1="580" y1="230" x2="574" y2="250"/>
+            <line x1="610" y1="224" x2="604" y2="244"/><line x1="640" y1="216" x2="634" y2="236"/>
+            <line x1="505" y1="260" x2="499" y2="280"/><line x1="565" y1="268" x2="559" y2="288"/>
+            <line x1="625" y1="258" x2="619" y2="278"/><line x1="535" y1="300" x2="529" y2="320"/>
+            <line x1="595" y1="306" x2="589" y2="326"/>
+          </g>
+          <!-- melon patch -->
+          <g>
+            <path d="M440,606 C480,590 520,612 560,600 C600,588 640,606 690,598" stroke="#55703f" stroke-width="3" fill="none"/>
+            <ellipse cx="480" cy="606" rx="30" ry="20" fill="#4f6e3a"/>
+            <path d="M458,600 q22,-8 44,0 M456,610 q24,-8 48,0" stroke="#86a463" stroke-width="2" fill="none"/>
+            <ellipse cx="600" cy="600" rx="34" ry="22" fill="#4f6e3a"/>
+            <path d="M574,594 q26,-8 52,0 M572,604 q28,-8 56,0" stroke="#86a463" stroke-width="2" fill="none"/>
+            <!-- one melon cut open -->
+            <path d="M650,604 a26,26 0 0 0 52,0 Z" fill="#3f6131"/>
+            <path d="M654,604 a22,20 0 0 0 44,0 Z" fill="#d75b52"/>
+            <circle cx="668" cy="610" r="1.6" fill="#2b2420"/><circle cx="680" cy="614" r="1.6" fill="#2b2420"/><circle cx="690" cy="609" r="1.6" fill="#2b2420"/>
+            <path d="M520,616 c6,-12 16,-12 20,-2 M630,612 c6,-12 16,-12 20,-2" fill="#6a8a4a"/>
+          </g>
+          <rect class="hit" x="420" y="110" width="300" height="530"/>
+          <g class="tag" transform="translate(680 112)">
+            <rect x="-6" y="-26" width="148" height="38" rx="19"/>
+            <text x="68" y="-1">III · The Rain</text>
+          </g>
+          <g class="beacon" transform="translate(560 190)"><circle r="7"/><circle class="pulse" r="7"/></g>
+        </g>
+
+        <!-- IV. Pond -->
+        <g class="water" data-id="pond" tabindex="0" role="button" aria-label="IV. The Pond">
+          <ellipse cx="270" cy="770" rx="200" ry="66" fill="url(#g-water)"/>
+          <g clip-path="url(#clip-pond)" fill="none" stroke="#c4dbe6" stroke-width="1.6">
+            <ellipse class="ring ring--1" cx="190" cy="760" rx="20" ry="6"/>
+            <ellipse class="ring ring--2" cx="340" cy="790" rx="20" ry="6"/>
+            <ellipse class="ring ring--3" cx="260" cy="740" rx="20" ry="6"/>
+          </g>
+          <g>
+            <ellipse cx="140" cy="790" rx="26" ry="9" fill="#5f8550"/>
+            <ellipse cx="210" cy="806" rx="20" ry="7" fill="#6e9459"/>
+            <ellipse cx="390" cy="752" rx="24" ry="8" fill="#5f8550"/>
+            <ellipse cx="330" cy="812" rx="18" ry="6" fill="#6e9459"/>
+            <!-- lotus -->
+            <g transform="translate(392 744)">
+              <path d="M0,0 c-6,-10 -2,-20 0,-24 c2,4 6,14 0,24 Z" fill="#e8b6b0"/>
+              <path d="M0,0 c-12,-6 -14,-16 -14,-18 c6,2 12,8 14,18 Z" fill="#dfa29c"/>
+              <path d="M0,0 c12,-6 14,-16 14,-18 c-6,2 -12,8 -14,18 Z" fill="#dfa29c"/>
+            </g>
+            <!-- reeds and water plantain -->
+            <g stroke="#55703f" stroke-width="2.5" stroke-linecap="round">
+              <line x1="86" y1="770" x2="70" y2="690"/><line x1="96" y1="770" x2="96" y2="680"/>
+              <line x1="106" y1="772" x2="122" y2="700"/>
+            </g>
+            <circle cx="96" cy="678" r="4" fill="#9fb1d8"/><circle cx="122" cy="698" r="3.5" fill="#9fb1d8"/>
+            <!-- a waterbird and chick, after Kano Yasunobu -->
+            <g transform="translate(250 762)" fill="#211f1d">
+              <ellipse cx="0" cy="0" rx="20" ry="11"/>
+              <path d="M14,-6 C20,-18 24,-26 30,-28 C34,-28 36,-24 32,-22 C28,-20 24,-12 20,-4 Z"/>
+              <path d="M34,-25 l8,1 l-8,3 Z" fill="#c8443a"/>
+              <ellipse cx="-40" cy="10" rx="9" ry="5"/>
+              <circle cx="-33" cy="5" r="3.5"/>
+            </g>
+          </g>
+          <ellipse class="hit" cx="250" cy="760" rx="230" ry="110"/>
+          <g class="tag" transform="translate(140 650)">
+            <rect x="-6" y="-26" width="150" height="38" rx="19"/>
+            <text x="69" y="-1">IV · The Pond</text>
+          </g>
+          <g class="beacon" transform="translate(300 790)"><circle r="7"/><circle class="pulse" r="7"/></g>
+        </g>
+
+        <!-- I. Well -->
+        <g class="water" data-id="well" tabindex="0" role="button" aria-label="I. The Well">
+          <ellipse cx="1340" cy="790" rx="150" ry="40" fill="#9c8558"/>
+          <ellipse cx="1340" cy="780" rx="130" ry="32" fill="#b59c6c"/>
+          <!-- well shaft -->
+          <path d="M1270,700 L1270,770 A70,22 0 0 0 1410,770 L1410,700 Z" fill="#8a6f49"/>
+          <path d="M1270,720 A70,22 0 0 0 1410,720 M1270,745 A70,22 0 0 0 1410,745" stroke="#6d5739" stroke-width="2" fill="none"/>
+          <ellipse cx="1340" cy="700" rx="70" ry="22" fill="#a68a5c"/>
+          <ellipse cx="1340" cy="700" rx="56" ry="15" fill="#22384f"/>
+          <ellipse class="well-shine" cx="1340" cy="702" rx="30" ry="6" fill="#4f7899"/>
+          <!-- frame, pulley, rope, pot -->
+          <g stroke="#4e3d29" stroke-width="7" stroke-linecap="round">
+            <line x1="1282" y1="702" x2="1282" y2="590"/><line x1="1398" y1="702" x2="1398" y2="590"/>
+            <line x1="1270" y1="592" x2="1410" y2="592"/>
+          </g>
+          <circle cx="1340" cy="602" r="10" fill="#4e3d29"/>
+          <line class="rope" x1="1340" y1="602" x2="1340" y2="680" stroke="#c9b48a" stroke-width="2"/>
+          <path class="pot" d="M1330,680 h20 l4,10 a14,12 0 1 1 -28,0 Z" fill="#b8693e"/>
+          <!-- vessels on the rim, after the Kishangarh folio -->
+          <g fill="#b8693e">
+            <circle cx="1440" cy="772" r="9"/><circle cx="1462" cy="776" r="9"/>
+            <circle cx="1240" cy="772" r="9"/><circle cx="1218" cy="778" r="9" fill="#d6b04b"/>
+          </g>
+          <ellipse class="hit" cx="1340" cy="700" rx="180" ry="140"/>
+          <g class="tag" transform="translate(1270 560)">
+            <rect x="-6" y="-26" width="138" height="38" rx="19"/>
+            <text x="63" y="-1">I · The Well</text>
+          </g>
+          <g class="beacon" transform="translate(1340 702)"><circle r="7"/><circle class="pulse" r="7"/></g>
+        </g>
+
+        <!-- foreground grasses -->
+        <g stroke="#7d7048" stroke-width="2" stroke-linecap="round" opacity=".7">
+          <path d="M520,900 q4,-30 -6,-50 M532,900 q2,-26 10,-44 M760,900 q-2,-24 -10,-40 M1140,900 q4,-28 14,-42 M1520,900 q-4,-30 -14,-46 M1532,900 q4,-24 10,-36"/>
+        </g>
+      </svg>
+
+    </section>
+
+    <nav class="index" aria-label="All six works">
+      <h2>The waters</h2>
+      <ol id="index-list"></ol>
+    </nav>
+  </main>
+
+  <!-- the ripple that floods the screen on selection -->
+  <div class="flood" id="flood" aria-hidden="true"></div>
+
+  <div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-labelledby="viewer-title" hidden>
+    <button class="viewer__close" id="viewer-close" aria-label="Return to the landscape">Return to shore <span aria-hidden="true">↑</span></button>
+    <article class="viewer__inner">
+      <figure class="viewer__figure">
+        <div class="viewer__frame">
+          <img id="viewer-img" alt="">
+        </div>
+        <figcaption id="viewer-note" class="viewer__note"></figcaption>
+      </figure>
+      <div class="viewer__text">
+        <p class="viewer__water" id="viewer-water"></p>
+        <h2 class="viewer__title" id="viewer-title"></h2>
+        <p class="viewer__artist" id="viewer-artist"></p>
+        <div class="viewer__body" id="viewer-body"></div>
+        <dl class="viewer__meta" id="viewer-meta"></dl>
+        <a class="viewer__link" id="viewer-link" target="_blank" rel="noopener">View in the Harvard Art Museums collection <span aria-hidden="true">↗</span></a>
+        <div class="viewer__nav">
+          <button id="viewer-prev" class="navbtn"><span aria-hidden="true">←</span> <span class="navbtn__label"></span></button>
+          <button id="viewer-next" class="navbtn"><span class="navbtn__label"></span> <span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <footer class="colophon">
+    <p>An independent online exhibition drawing on the collections of the Harvard Art Museums. Images © President and Fellows of Harvard College, used under the museums’ policy for noncommercial, educational use. Works under copyright are reproduced at the reduced size the museums provide.</p>
+  </footer>
+
+  <!-- filter used to make each image settle like a disturbed water surface -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <filter id="surface" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008 0.03" numOctaves="2" seed="4" result="noise"/>
+      <feDisplacementMap id="surface-map" in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </svg>
+
+  <script src="works.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
